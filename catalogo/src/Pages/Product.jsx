@@ -6,6 +6,8 @@ import Navbar from '../Components/Navbar/Navbar';
 import Newsletter from '../Components/Newsletter/Newsletter';
 import { mobile } from '../responsive';
 
+import { priceProduct } from "../data";
+
 
 const Container = styled.div``
 
@@ -114,28 +116,26 @@ const Product = () => {
         <Container>
             <Announcement/>
             <Navbar/>
+            {priceProduct.map(item => (
             <Wrapper>
                 <ImageContainer>
-                    <Image src="https://ush.dutyfreeshopatlanticosur.com/media/catalog/product/cache/cdd137db0c01fc812bda3bb792d6491a/8/9/894948c68_-_894948c88_2__2.jpg"/>
+                    <Image src={item.img}/>
                 </ImageContainer>
                 <InfoContainer>
-                    <Title>Pantalon de mujer</Title>
-                    <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis animi eveniet eaque nemo error? Maiores officiis minima recusandae dolorum numquam voluptatum deserunt reprehenderit laboriosam dignissimos veniam pariatur voluptatem, libero sunt.</Description>
-                    <Price>1500$</Price>
+                    <Title>{item.title}</Title>
+                    <Description>{item.description}</Description>
+                    <Price>{item.price}$</Price>
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color</FilterTitle>
-                            <FilterColor color="lightblue"/>
-                            <FilterColor color="gray"/>
+                            <FilterColor color={item.color}/>
+                            
                         </Filter>
                         <Filter>
                             <FilterTitle>Talle</FilterTitle>
                             <FilterSize>
-                                <FilterSizeOption>XS</FilterSizeOption>
-                                <FilterSizeOption>S</FilterSizeOption>
-                                <FilterSizeOption>M</FilterSizeOption>
-                                <FilterSizeOption>L</FilterSizeOption>
-                                <FilterSizeOption>XL</FilterSizeOption>
+                                <FilterSizeOption>{item.size}</FilterSizeOption>
+                                
                             </FilterSize>
                             
                         </Filter>
@@ -152,6 +152,7 @@ const Product = () => {
                     
                 </InfoContainer>
             </Wrapper>
+            ))}
             <Newsletter/>
             <Footer/>
         </Container>

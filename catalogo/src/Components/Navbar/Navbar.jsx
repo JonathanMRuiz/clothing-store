@@ -3,10 +3,14 @@ import { Search, ShoppingCart } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
 import { mobile } from '../../responsive';
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
-    height: 60px;
+    height: 40px;
     ${mobile({ height:"50px" })};
+    background-color: #F3F2F2;
+
+    
 `
 const Wrapper = styled.div`
     padding: 10px 20px;
@@ -43,19 +47,24 @@ const Input = styled.input`
 
 const Center = styled.div`
     flex: 1;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 `
 
-const Logo = styled.h1`
-    font-weight: bold;
-    ${mobile({ fontSize:"24px" })};
-`
-const Right = styled.div`
+
+const Right = styled.div` 
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     ${mobile({ flex:2, justifyContent:"center" })};
+`
+const MenuCenter = styled.div`
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 25px;
+    ${mobile({ fontSize:"12px", marginLeft:"10px" })};
 `
 
 const MenuItem = styled.div`
@@ -77,16 +86,19 @@ const Navbar = () => {
                     </SearchContainer>
                 </Left>
                 <Center>
-                    <Logo>JMR.</Logo>
+                    <MenuCenter><Link to='/'>Ir inicio</Link></MenuCenter>
+                    <MenuCenter><Link to='/productList/id'>Lista de productos</Link></MenuCenter>
                 </Center>
                 <Right>
-                    <MenuItem>Registrar</MenuItem>
-                    <MenuItem>Ingresar</MenuItem>
+                    <Link to={'/register/id'}><MenuItem>Registrar</MenuItem></Link>
+                    <Link to={'/login/id'}><MenuItem>Ingresar</MenuItem></Link>
+                    
                     <MenuItem>
                         <Badge badgeContent={4} color="primary">
-                            <ShoppingCart/>
+                        <Link to={'/cart/id'}><ShoppingCart/></Link>
                         </Badge>
                     </MenuItem>
+                    
                 </Right>
             </Wrapper>
 

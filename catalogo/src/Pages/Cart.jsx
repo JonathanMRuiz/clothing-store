@@ -162,6 +162,7 @@ const Button = styled.button`
 
 
 const Cart = () => {
+    
     return (
         <Container>
             <Announcement/>
@@ -198,30 +199,11 @@ const Cart = () => {
                             </PriceDetail>
                         </Product>
                         <Hr/>
-                        <Product>
-                            <ProductDetail>
-                                <Image src="https://www.chombas.com.ar/wp-content/uploads/2019/02/merchandising_campera-polar2.jpg"/>
-                                <Details>
-                                    <ProductName><b>Producto: </b> Campera negra </ProductName>
-                                    <ProductId><b>ID: </b> 164164698496 </ProductId>
-                                    <ProductColor color="black"/>
-                                    <ProductSize><b>Talle: </b> L </ProductSize>
-                                </Details>
-                            </ProductDetail>
-                            <PriceDetail>
-                                <ProductAmountContainer>
-                                    <Add/>
-                                    <ProductAmount>2</ProductAmount>
-                                    <Remove/>
-                                </ProductAmountContainer>
-                                <ProductPrice>3000$</ProductPrice>
-                            </PriceDetail>
-                        </Product>
                     </Info>
                     <Summary>
                         <SummaryTitle>Resumen</SummaryTitle>
                         <SummaryItem>
-                            <SummaryItemText>Subtotal</SummaryItemText>
+                               <SummaryItemText>Subtotal</SummaryItemText>
                             <SummaryItemPrice>6000 $</SummaryItemPrice>
                         </SummaryItem>
 

@@ -1,5 +1,10 @@
+import { ArrowBackSharp } from '@material-ui/icons';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
+import { Link } from 'react-router-dom'
+import Announcement from '../Components/Announcement/Announcement';
+import Navbar from '../Components/Navbar/Navbar';
+
 
 const Container = styled.div`
     width: 100vw;
@@ -45,18 +50,30 @@ const Button = styled.button`
     color:white;
     cursor:pointer;
 `
-const Link = styled.a`
+const LinkClick = styled.a`
     margin: 5px 0px;
     font-size: 12px;
     text-decoration: underline;
     cursor:pointer;
 `
+const ArrowBack = styled.div`
+    width: 20px;
+    color:black;
+    padding: 0px;
+    margin: 10px;
+`
 
 
 const Login = () => {
     return (
+        <>
+        <Announcement/>
+        <Navbar/>
         <Container>
             <Wrapper>
+                <ArrowBack>
+                    <Link to={'/'}> <ArrowBackSharp/> </Link>
+                </ArrowBack>
                 <Title>Ingresa a tu cuenta</Title>
                 <Form>
                     
@@ -65,11 +82,12 @@ const Login = () => {
                     <Input placeholder="Contraseña"/>
                     
                     <Button>Ingresar</Button>
-                    <Link>No recuerdo mi contraseña</Link>
-                    <Link>Crea una nueva cuenta</Link>
+                    <LinkClick>No recuerdo mi contraseña</LinkClick>
+                    <LinkClick>Crea una nueva cuenta</LinkClick>
                 </Form>
             </Wrapper>
         </Container>
+        </>
     )
 }
 

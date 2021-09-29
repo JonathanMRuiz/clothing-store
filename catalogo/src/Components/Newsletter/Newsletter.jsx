@@ -47,6 +47,7 @@ const Button = styled.button`
     border:none;
     background-color: teal;
     color:white;
+    cursor:pointer;
 
 `
 

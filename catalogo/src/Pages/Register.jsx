@@ -1,6 +1,10 @@
 
+import { ArrowBackSharp } from '@material-ui/icons';
 import styled from 'styled-components';
 import { mobile } from '../responsive';
+import { Link } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar';
+import Announcement from '../Components/Announcement/Announcement';
 
 const Container = styled.div`
     width: 100vw;
@@ -38,8 +42,9 @@ const Input = styled.input`
 `
 const Agreement = styled.span`
     font-size: 12px;
-    margin: 10px 20px;
+    margin:0px 27px;
     cursor:pointer;
+    
 `
 const Button = styled.button`
     width: 40%;
@@ -52,10 +57,17 @@ const Button = styled.button`
 `
 
 
+
+
 const Register = () => {
     return (
+        <>
+        <Announcement/>
+        <Navbar/>
         <Container>
+            
             <Wrapper>
+
                 <Title>Crea una cuenta</Title>
                 <Form>
                     <Input placeholder="Nombre"/>
@@ -71,6 +83,7 @@ const Register = () => {
                 </Form>
             </Wrapper>
         </Container>
+    </>
     )
 }
 

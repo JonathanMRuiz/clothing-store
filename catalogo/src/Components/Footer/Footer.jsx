@@ -92,17 +92,7 @@ const Footer = () => {
                 <Description>What is Lorem Ipsum?
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                 </Description>
-                <SocialContainer>
-                    
-                    <SocialIcon color="E4405F">
-                        <Instagram/>
-                    </SocialIcon>
-
-                    <SocialIcon color="000000">
-                        <GitHub/>
-                    </SocialIcon>
-
-                </SocialContainer>
+                
             </Left>
             <Center>
                 <Title>Enlaces</Title>

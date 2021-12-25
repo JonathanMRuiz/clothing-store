@@ -10,10 +10,8 @@ import Register from './Pages/Register';
 import React from "react";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
-} from "react-router-dom";
+  } from "react-router-dom";
 
 
 function App() {
@@ -25,7 +23,7 @@ function App() {
           
         </nav>
 
-        <Switch>
+        
         <Route path="/product/:id">
             <Product />
           </Route>
@@ -44,7 +42,7 @@ function App() {
           <Route path="/">
             <Home/>
           </Route>
-        </Switch>
+        
       </div>
     </Router>
     </div>
